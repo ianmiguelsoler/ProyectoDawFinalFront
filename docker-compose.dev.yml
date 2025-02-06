@@ -1,12 +1,10 @@
 version: '3.8'
-
 services:
-  apache:
+  frontend:
     build: ./docker/development
     container_name: frontend_dev
     restart: always
     volumes:
       - ./public_html:/var/www/html
-      - ./config/urls.js:/var/www/html/config/urls.js
     ports:
-      - "80:80"
+      - "3000:80"
