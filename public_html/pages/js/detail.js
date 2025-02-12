@@ -8,7 +8,7 @@ function loadFilm() {
         return;
     }
 
-    fetch(apiUrl + "/films/get_film.php?id=" + id, {
+    fetch(apiUrl + "api/films/get_film.php?id=" + id, {
         method: 'GET'
     })
     .then(response => {
