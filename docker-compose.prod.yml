@@ -10,4 +10,4 @@ services:
       - ./docker/production/apache-prod.conf:/etc/apache2/sites-available/000-default.conf
       - ./public_html/config/urls.js:/var/www/html/config/urls.js
     ports:
-      - "8081:80"  # 🔹 El frontend usará el puerto 8081 en la máquina host
+      - "8081:80"  # 🔹 Cambia el puerto de la máquina host a 8081
