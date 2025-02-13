@@ -1,3 +1,5 @@
-// Configurar la URL de la API Backend
-const apiUrl = "http://localhost:8080";
+const apiUrl = window.location.hostname.includes("localhost")
+    ? "http://localhost:8080"  // Desarrollo
+    : "http://peliculasian.chickenkiller.com";  // Producción
 
+console.log(`🔹 API URL: ${apiUrl}`);

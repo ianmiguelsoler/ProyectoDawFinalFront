@@ -1,12 +1,13 @@
 version: '3.8'
 
 services:
-  apache:
+  frontend:
     build: ./docker/production
     container_name: frontend_prod
     restart: always
     volumes:
       - ./public_html:/var/www/html
-      - ./config/urls.js:/var/www/html/config/urls.js
+      - ./docker/production/apache-prod.conf:/etc/apache2/sites-available/000-default.conf
+      - ./public_html/config/urls.js:/var/www/html/config/urls.js
     ports:
-      - "80:80"
+      - "8081:80"  # 🔹 El frontend usará el puerto 8081 en la máquina host
