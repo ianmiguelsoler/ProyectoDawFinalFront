@@ -73,7 +73,10 @@ function addNewFilm() {
         plot: document.getElementById("plot").value
     };
 
-    fetch(`${apiUrl}/api/films/add_film.php`, {
+    // ✅ Corregir URL para evitar doble "/"
+    let url = new URL("/api/films/add_film.php", apiUrl).href;
+
+    fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(jsonData)
@@ -99,6 +102,7 @@ function addNewFilm() {
 
     return false;
 }
+
 
 document.addEventListener("DOMContentLoaded", function() { 
     console.log("📌 Página cargada. Cargando películas...");
