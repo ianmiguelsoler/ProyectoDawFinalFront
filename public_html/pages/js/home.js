@@ -44,7 +44,7 @@ function loadFilms() {
     let tableBody = document.getElementById("tbody-container");
     tableBody.innerHTML = "";
 
-    fetch(apiUrl + "api/films/get_films.php", { method: 'GET' })
+    fetch(apiUrl + "/api/films/get_films.php", { method: 'GET' })
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -73,7 +73,7 @@ function addNewFilm() {
         plot: document.getElementById("plot").value
     };
 
-    fetch(apiUrl + "api/films/add_film.php", {
+    fetch(`${apiUrl}/api/films/add_film.php`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(jsonData)
