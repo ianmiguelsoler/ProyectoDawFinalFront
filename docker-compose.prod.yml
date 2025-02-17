@@ -1,11 +1,10 @@
+version: '3.8'
 services:
   frontend:
-    build:
-      context: .
-      dockerfile: docker/production/Dockerfile
+    build: ./docker/production
     container_name: frontend_prod
     restart: always
     volumes:
-      - ./public_html:/var/www/html  # ✅ Se monta correctamente el frontend
+      - ./public_html:/var/www/html 
     ports:
-      - "8081:80"
+      - "3000:80"
